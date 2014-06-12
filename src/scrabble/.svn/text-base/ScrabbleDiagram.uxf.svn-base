@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.2">
+  <zoom_level>6</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>246</x>
+      <y>18</y>
+      <w>174</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*Scrabble*
+--
+char [ ] [ ] boardConfiguration
+char [ ] [ ] boardChars
+ArrayList&lt;Character&gt; tileBag
+ArrayList&lt;Character&gt; tilesInHand
+int totalScore
+ScabbleDictionary dictionary
+--
+public void drawTile()
+public GameState getCurrentGameState()
+public ArrayList&lt;GameState&gt; playGame
+--
+Handles the running of the game
+Manages the GameStates, and records 
+score
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>468</x>
+      <y>618</y>
+      <w>126</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>*ScrabbleTile*
+--
+char letter
+int points
+int letterMultiplier
+int [ ] position
+boolean playable
+--
+int [ ] getPosition
+int getPoints
+char getLetter
+void setMultiplier
+--
+Keeps track of the value and 
+position of the tile
+Keeps track of the multiplier
+letter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>714</x>
+      <y>390</y>
+      <w>126</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>*ScrabbleWord*
+--
+ArrayList&lt;ScrabbleTile&gt; letters
+int score
+int wordMultiplier
+int length
+String word
+--
+int getLength
+int getScore
+int setMultiplier
+int containsLetter(char l)
+boolean intersects(char, int[])
+--
+Keeps track of the tiles that
+make up the word, as well
+as its score, length, and 
+multiplier</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>36</x>
+      <y>324</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>*GameState*
+--
+ArrayList&lt;ScrabbleWord&gt; playedWords
+int totalScore
+ScrabbleWord lastWordPlayed
+ScrabbleWord highestScoring
+--
+int getTotalScore
+String lastPlayed
+
+--
+Keep track of the state of the
+board, and what tiles are
+available to the player.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>18</x>
+      <y>564</y>
+      <w>138</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>*ScrabbleAI*
+--
+ArrayList&lt;ScrabbleTile&gt; currentTiles
+ScrabbleWord bestWord
+int score
+--
+ScrabbleWord makeMove()
+
+--
+Keeps track of the tiles
+available to the computer
+and handles the move making of
+the computer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>276</x>
+      <y>318</y>
+      <w>126</w>
+      <h>156</h>
+    </coordinates>
+    <panel_attributes>*ScrabbleGame*
+--
+GameState board
+ScrabbleAI computer
+ScrabbleWord wordSoFar
+int gameType
+--
+void selectTile()
+void playWord()
+boolean checkWord()
+boolean endGame()
+--
+Keep track of order of the game
+and determines who the winner
+of the game would be
+Also allows for different
+types of gameplay</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>336</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>*ScrabbleDictionary*
+--
+Node root
+--
+findLetter()
+findString()
+addWord()
+printWord()
+--
+Stores all of the words to
+be used in the game and 
+allows for all the words
+to be accessed and searched
+for</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>150</y>
+      <w>30</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;168;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>144</x>
+      <y>378</y>
+      <w>144</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;18;132;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>384</x>
+      <y>378</y>
+      <w>138</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>126;18;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>138</x>
+      <y>456</y>
+      <w>180</w>
+      <h>174</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;162;168;162;168;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>372</x>
+      <y>456</y>
+      <w>354</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>342;66;18;66;18;18</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>576</x>
+      <y>534</y>
+      <w>210</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>18;156;198;156;198;18</additional_attributes>
+  </element>
+</diagram>

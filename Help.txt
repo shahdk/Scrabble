@@ -1,0 +1,20 @@
+GUI HELP
+
+HOW TO PLAY:
+-> Click on the tile from the rack to select it.
+-> Click on the tile on the board to place the tile.
+-> Once you have placed the desired word click the play word button.
+-> If you want the computer to play a move for you, click on Play Once button.
+-> If you want the computer to play the rest of the game for you, click on the Play Rest button.
+-> Click on the quit button to quit the game.
+-> To replace the tile on the board click on the empty tile of the hand panel and then click the tile on the board you want to remove.
+-> To replace a tile remove the tile you want to replace first and the place the desired tile.
+
+LOAD/SAVE GAME:
+-> Click on the file menu and choose the option for new game, load game and save game.
+
+CHANGING GAME MODES:
+-> Click on the mode menu to change modes.
+-> 1 Player Mode: You are the only one playing the game.
+-> Computer Mode: Computer is the player of the game.
+-> Computer vs. Human Mode: You vs. the computer play turns.
